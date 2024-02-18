@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+}
+.navbare {
+    background-color: #435560;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 2;
+}
+#welcoming{
+    text-align: center;
+    color: black;
+
+}
