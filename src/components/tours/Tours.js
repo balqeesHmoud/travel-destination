@@ -1,11 +1,10 @@
 import './Tours.css';
+import Tour from './tour/Tour';
 
-function Tours (props){
-    return(
-        <div className="tour">
-        <h2 className="tourName">{props.toursName}</h2>
-        <img className="tourImage" src={props.toursImage} alt="tour img"/>
-         
+function Tours(props) {
+    return (
+        <div className="tours">
+            <Tour key={props.tour.id} toursName={props.tour.name} toursImage={props.tour.image} />
         </div>
     );
 }
