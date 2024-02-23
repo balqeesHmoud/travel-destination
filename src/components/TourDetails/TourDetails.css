@@ -1,14 +1,10 @@
-/* TourDetails.css
 .tour-details {
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  margin-bottom: 20px;
   }
   
-  .tour-details img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  } */
+
   
   

@@ -1,39 +1,48 @@
-// TourDetails.js
+import './TourDetails.css';
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { useParams } from 'react-router-dom';
 import toursData from '../../data/dp.json';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
-const TourDetails = () => {
+function TourDetails() {
   const { id } = useParams();
-  const [showFullDescription, setShowFullDescription] = useState(false);
+  const selectTour = toursData.find((tour) => tour.id === id);
 
-  // Find the tour with the matching id
-  const tour = toursData.find(tour => tour.id === id);
+  const { name, info, image } = selectTour;
 
-  // If tour is not found, display a message
-  if (!tour) {
-    return <div>Tour not found!</div>;
-  }
+  const [fullDesc, setFullDesc] = useState(false);
 
-  // Extract first three lines of the description
-  const shortDescription = tour.info.split('\n').slice(0, 3).join('\n');
+  const readDesc = () => {
+    setFullDesc(!fullDesc);
+  };
 
   return (
+    <>     
+     <Header />
+    
+
     <div className="tour-details">
-      <h2>{tour.name}</h2>
-      <img src={tour.image} alt={tour.name} />
-      <p>
-        {showFullDescription ? tour.info : shortDescription}
-        {tour.info.split('\n').length > 3 &&
-          (showFullDescription ? (
-            <button onClick={() => setShowFullDescription(false)}>See less</button>
-          ) : (
-            <button onClick={() => setShowFullDescription(true)}>See more</button>
-          ))}
-      </p>
-      <Link to="/">Back to Home</Link>
+      
+      <Card style={{ width: '25rem' }}>
+      <Card.Img variant="top" src={image} />
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
+        {fullDesc ? info : `${info.substring(0, 120)}...`}
+            <br />
+            <br />
+        </Card.Text>
+        <Button onClick={readDesc}>{fullDesc ? 'See Less' : 'See More'}</Button>
+      </Card.Body>
+    </Card>
     </div>
+    <Footer/>
+    </>
+
   );
-};
+}
 
 export default TourDetails;
