@@ -1,13 +1,16 @@
+import React from 'react';
 import './Tours.css';
+import Tour from './tour/Tour';
+import toursData from '../../data/dp.json';
 
-function Tours (props){
-    return(
-        <div className="tour">
-        <h2 className="tourName">{props.toursName}</h2>
-        <img className="tourImage" src={props.toursImage} alt="tour img"/>
-         
-        </div>
-    );
+function Tours() {
+  return (
+    <div className="tours">
+      {toursData.map((tour) => (
+        <Tour key={tour.id} tour={tour} />
+      ))}
+    </div>
+  );
 }
 
 export default Tours;

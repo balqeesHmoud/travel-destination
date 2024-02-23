@@ -1,5 +1,7 @@
 import './Footer.css';
 import 'boxicons/css/boxicons.min.css';
+import Card from 'react-bootstrap/Card';
+
 
 function Footer() {
     return (
@@ -23,6 +25,7 @@ function Footer() {
                     <i className='bx bxl-youtube'></i>
                 </a>
             </div>
+           
         </div>
     );
 }

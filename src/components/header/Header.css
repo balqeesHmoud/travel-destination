@@ -1,14 +1,13 @@
-.header {
-    display: flex;
+.navbare {
+    background-color: #3b3c3b;
+    text-align: center;
     align-items: center;
     justify-content: center;
+    height: 100px;
     padding: 0px;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
+    
 }
-.navbare {
+/* .navbare {
     background-color: #3b3c3b;
     position: fixed;
     display: flex;
@@ -18,9 +17,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
     z-index: 2;
-}
+} */
 #welcoming{
     text-align: center;
     color: black;
